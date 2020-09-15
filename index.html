@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <title>The Newest</title>
+</head>
+<body>
+  <div class="search-panel">
+    <p id="date">11 СЕНТЯБРЯ 2020</p>
+  </div>
+  <div class="panel">
+    <nav>
+      <h1>The Newest</h1>
+      <div class="gap"></div>
+      <div class="list">
+        <a>Новости</a>
+        <a>Мнение</a>
+        <a>Статьи</a>
+        <a>Кто мы?</a>
+      </div>
+    </nav>
+    <div class="carousel">
+      <div class="card card1">
+        <h2>Fishing</h2>
+        <h4>Azizbek Muminoff</h4>
+        <div class="form">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit expedita illum iste repellat suscipit ullam nobis explicabo nemo iure quidem, non sapiente tenetur! Illo exercitationem, officiis vitae quaerat velit dolores.</p>
+          <div class="btn"><button>READ</button></div>
+        </div>
+      </div>
+      <div class="card card2 active-card">
+        <h2>Plov</h2>
+        <h4>Azizbek Muminoff</h4>
+        <div class="form">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit expedita illum iste repellat suscipit ullam nobis explicabo nemo iure quidem, non sapiente tenetur! Illo exercitationem, officiis vitae quaerat velit dolores.</p>
+          <div class="btn"><button>READ</button></div>
+        </div>
+      </div>
+      <div class="card card3">
+        <h2>Wow</h2>
+        <h4>Azizbek Muminoff</h4>
+        <div class="form">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit expedita illum iste repellat suscipit ullam nobis explicabo nemo iure quidem, non sapiente tenetur! Illo exercitationem, officiis vitae quaerat velit dolores].</p>
+          <div class="btn"><button>READ</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="news">
+    <h1>Новости</h1>
+    <div class="tbl">
+      <div>
+        <div class="tile tilePlus">
+          <h4 class="time">16:55</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit expedita illum iste repellat suscipit ullam nobis explicabo nemo.</p>
+        </div>
+      </div>
+      <div>
+        <div class="tile">
+          <h4 class="time">16:55</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit expedita illum iste repellat suscipit ullam nobis explicabo nemo.</p>
+        </div>
+        <div class="tile">
+          <h4 class="time">16:55</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit expedita illum iste repellat suscipit ullam nobis explicabo nemo.</p>
+        </div>
+        <div class="tile">
+          <h4 class="time">16:55</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit expedita illum iste repellat suscipit ullam nobis explicabo nemo.</p>
+        </div>
+      </div>
+      <div>
+        <div class="tile">
+          <h4 class="time">16:55</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit expedita illum iste repellat suscipit ullam nobis explicabo nemo.</p>
+        </div>
+        <div class="tile">
+          <h4 class="time">16:55</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit expedita illum iste repellat suscipit ullam nobis explicabo nemo.</p>
+        </div>
+        <div class="tile">
+          <h4 class="time">16:55</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit expedita illum iste repellat suscipit ullam nobis explicabo nemo.</p>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+  <div class="about">
+    <div class="header"><h1>НАША КОМАНДА</h1></div>
+    <div class="aboutCarousel" id="carousel-one-by-one">
+      <div class="slide" data-index="1" id="slide1">
+        <!-- <h2>writer</h2>
+        <h2>Zevara Matmuradova</h2> -->
+      </div>
+      <div class="slide" data-index="2" id="slide2">
+        <!-- <h2>designer</h2>
+        <h2>Aziz Muminoff</h2> -->
+      </div>
+      <div class="slide" data-index="3" id="slide3">
+        <!-- <h2>writer</h2>
+        <h2>Laylo Mirjalilova</h2> -->
+      </div>
+      <div class="slide" data-index="4" id="slide4">
+        <!-- <h2>writer</h2>
+        <h2>Nonna Karakhanova</h2> -->
+      </div>
+      <div class="slide" data-index="5" id="slide5">
+        <!-- <h2>writer</h2>
+        <h2>Nigina Khashim</h2> -->
+      </div>
+      <div class="slide" data-index="6" id="slide6">
+          <!-- <h2>writer</h2>
+          <h2>Nonna Karakhanova</h2> -->
+      </div>
+      <div class="slide" data-index="7" id="slide7">
+          <!-- <h2>writer</h2>
+          <h2>Nonna Karakhanova</h2> -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let step, current;
+    let activeSlide = 4;
+    window.onload = getWidth();
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach(slide => slide.addEventListener('click', move));
+
+    let positions = [0, 40, 80];
+    let scales = [1, 1, 1];
+    const cards = document.querySelectorAll('.card');
+
+    function move () {
+      if (this.dataset.index > activeSlide) {
+        current -= step;
+        activeSlide++;
+      } else if (this.dataset.index < activeSlide) {
+        current += step;
+        activeSlide--;
+      }
+      document.documentElement.style.setProperty('--trnslate', `translateX(${current}vw)`);
+    }
+
+    function getWidth() {
+      let width = document.querySelector('html').clientWidth + 17;
+      if (width > 1500) { step = 25; current = -37.5 }
+      else if (width > 1240 && width < 1501) { step = 30; current = -55 }
+      else if (width > 767 && width < 1241) { step = 50; current = -125 }
+      else { step = 75; current = -212.5 }
+      console.log(step);
+      console.log(current);
+    }
+
+    window.addEventListener('resize', updateWidth);
+    function updateWidth() {
+      let width = document.querySelector('html').clientWidth + 17;
+      if (width > 1500) { step = 25; }
+      else if (width > 1240 && width < 1501) { step = 30; }
+      else if (width > 767 && width < 1241) { step = 50; }
+      else { step = 75; }
+      current = -(step * 7 - 100) / 2 + step * -(activeSlide - 4);
+      console.log(activeSlide);
+      console.log(step);
+      console.log(current);
+      document.documentElement.style.setProperty('--trnslate', `translateX(${current}vw)`);
+    }
+
+    const myMap = new Map();
+    myMap.set(0, 'fishing.jpg');
+    myMap.set(1, 'girl.jpg');
+    myMap.set(2, 'rasp.jpg');
+
+    cards.forEach(card => card.addEventListener('click', activate));
+
+    let active = 1;
+
+    function activate () { 
+      if (this == cards[0]) {
+        positions[active] = positions[0];
+        scales[active] = scales[0];
+        positions[0] = 40;
+        scales[0] = 1.2;
+        active = 0;
+      } else if (this == cards[1]) {
+        positions[active] = positions[1];
+        scales[active] = scales[1];
+        positions[1] = 40;
+        scales[1] = 1.2;
+        active = 1;
+      } else if (this == cards[2])  {
+        positions[active] = positions[2];
+        scales[active] = scales[2];
+        positions[2] = 40;
+        scales[2] = 1.2;
+        active = 2;
+      }
+      document.documentElement.style.setProperty(`--src${active + 1}`, `linear-gradient(rgba(29, 38, 113, 0.3), rgba(195, 55, 100, 0.3)), url('images/${myMap.get(active)}'`);
+      let sec, thr;
+      if (active == 0) {
+        sec = 1; thr = 2;
+      } else if (active == 1) {
+        sec = 0; thr = 2;
+      } else {
+        sec = 0; thr = 1;
+      }
+      document.documentElement.style.setProperty(`--src${sec + 1}`, `linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url('images/${myMap.get(sec)}'`);
+      document.documentElement.style.setProperty(`--src${thr + 1}`, `linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url('images/${myMap.get(thr)}'`);
+      document.documentElement.style.setProperty('--card1', `translateX(${positions[0]}vw) scale(${scales[0]})`);
+      document.documentElement.style.setProperty('--card2', `translateX(${positions[1]}vw) scale(${scales[1]})`);
+      document.documentElement.style.setProperty('--card3', `translateX(${positions[2]}vw) scale(${scales[2]})`);
+    }
+  </script>
+</body>
+</html>

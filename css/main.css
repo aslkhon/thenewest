@@ -1,0 +1,535 @@
+@font-face {
+  font-family: 'Merriweather Light';
+  src: url("Merriweather-Light.eot");
+  src: url("Merriweather-Light.eot?#iefix") format("embedded-opentype"), url("Merriweather-Light.woff") format("woff"), url("Merriweather-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bebas Neue Regular';
+  src: url("BebasNeueRegular.eot");
+  src: url("BebasNeueRegular.eot?#iefix") format("embedded-opentype"), url("BebasNeueRegular.woff") format("woff"), url("BebasNeueRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  src: url("MyriadPro-Regular.eot");
+  src: url("MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("MyriadPro-Regular.woff") format("woff"), url("MyriadPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --card1: translateX(0vw) scale(1);
+  --card2: translateX(40vw) scale(1.2);
+  --card3: translateX(80vw) scale(1);
+  --src1: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url('images/fishing.jpg');
+  --src2: linear-gradient(rgba(29, 38, 113, 0.3), rgba(195, 55, 100, 0.3)), url('images/girl.jpg');
+  --src3: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url('images/rasp.jpg');
+}
+
+@media (min-width: 1501px) {
+  :root {
+    --trnslate: translateX(-37.5vw);
+  }
+}
+
+@media (min-width: 1241px) and (max-width: 1500px) {
+  :root {
+    --trnslate: translateX(-55vw);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1240px) {
+  :root {
+    --trnslate: translateX(-125vw);
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --trnslate: translateX(-212.5vw);
+  }
+}
+
+body {
+  margin: 0%;
+  background: #ffaa00;
+  background: linear-gradient(135deg, #ffaa00 0%, #ff6600 100%);
+  overflow-x: hidden;
+}
+
+.search-panel {
+  z-index: 5;
+  background-color: white;
+  position: fixed;
+  top: 0vh;
+  left: 70vw;
+  width: 22vw;
+  padding-left: 2em;
+  border-radius: 0 0 1.5em 1.5em;
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(34, 60, 80, 0.2);
+          box-shadow: 0px 0px 25px 0px rgba(34, 60, 80, 0.2);
+}
+
+.search-panel p {
+  margin: 0.5em;
+  font-size: 1.5em;
+  font-family: 'Bebas Neue Cyrillic';
+  color: #ff6600;
+}
+
+.panel {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.panel nav {
+  margin: auto;
+  width: 60vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.panel nav h1 {
+  font-family: 'Crawley';
+  color: white;
+  font-weight: 100;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+@media (min-width: 1921px) {
+  .panel nav h1 {
+    font-size: 5em;
+  }
+}
+
+@media (min-width: 1381px) and (max-width: 1920px) {
+  .panel nav h1 {
+    font-size: 4em;
+  }
+}
+
+@media (min-width: 1036px) and (max-width: 1380px) {
+  .panel nav h1 {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1035px) {
+  .panel nav h1 {
+    font-size: 2.5em;
+  }
+}
+
+.panel nav .gap {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.panel nav .list {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.panel nav .list a {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Bebas Neue Cyrillic';
+  color: white;
+}
+
+@media (min-width: 1921px) {
+  .panel nav .list a {
+    font-size: 2.5em;
+  }
+}
+
+@media (min-width: 1381px) and (max-width: 1920px) {
+  .panel nav .list a {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1036px) and (max-width: 1380px) {
+  .panel nav .list a {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1035px) {
+  .panel nav .list a {
+    font-size: 1.2em;
+  }
+}
+
+.panel .carousel {
+  -webkit-transform: translateX(-10vw);
+          transform: translateX(-10vw);
+  width: 120vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.panel .carousel .card {
+  cursor: pointer;
+  width: 30vw !important;
+  position: absolute;
+  margin: 4em;
+  padding: 2em;
+  -webkit-box-shadow: 0px 0px 25px 0px rgba(34, 60, 80, 0.2);
+          box-shadow: 0px 0px 25px 0px rgba(34, 60, 80, 0.2);
+  height: 40vh;
+  border-radius: 2.5em;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.panel .carousel .card h2 {
+  font-size: 4em;
+  margin: 0%;
+  font-family: 'Bebas Neue Cyrillic';
+  color: white;
+  text-shadow: 0px 0px 5px rgba(34, 60, 80, 0.3);
+}
+
+.panel .carousel .card h4 {
+  font-size: 1em;
+  font-weight: 200;
+  margin-top: 0.5em;
+  font-family: 'Myriad Pro';
+  color: white;
+  text-shadow: 0px 0px 5px rgba(34, 60, 80, 0.3);
+}
+
+.panel .carousel .card .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 1em;
+  position: absolute;
+}
+
+.panel .carousel .card p {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  font-size: 0.9em;
+  color: white;
+  font-family: 'Merriweather';
+  line-height: 1.7em;
+}
+
+.panel .carousel .card .btn {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.panel .carousel .card button {
+  font-family: 'Bebas Neue Cyrillic';
+  font-size: 1.5rem;
+  color: #ff6600;
+  height: 2em;
+  width: 4em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  border: none;
+  border-radius: 0.7em;
+  margin-bottom: 0.5em;
+  margin-right: 1em;
+}
+
+.panel .carousel .card1 {
+  z-index: 1;
+  -webkit-transform: var(--card1);
+          transform: var(--card1);
+  background: var(--src1);
+  background-size: cover;
+}
+
+.panel .carousel .card2 {
+  z-index: 2;
+  -webkit-transform: var(--card2);
+          transform: var(--card2);
+  background: var(--src2);
+  background-size: cover;
+}
+
+.panel .carousel .card3 {
+  z-index: 3;
+  -webkit-transform: var(--card3);
+          transform: var(--card3);
+  background: var(--src3);
+  background-size: cover;
+}
+
+.news {
+  overflow: scroll;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  background-color: white;
+  height: 100vh;
+}
+
+.news h1 {
+  margin-left: 0.8em;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
+  font-family: 'Bebas Neue Cyrillic';
+  color: #ff6600;
+  font-size: 2.5em;
+}
+
+.news .tbl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.news .tbl div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.news .tbl div {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.news .tile {
+  margin-bottom: 4em;
+  border-bottom: solid #979797 1px;
+}
+
+.news .tile .time {
+  font-family: 'Bebas Neue Cyrillic';
+  font-size: 1.7em;
+  color: #797979;
+  margin: 0px;
+}
+
+.news .tile p {
+  font-family: 'Merriweather';
+  line-height: 1.7em;
+}
+
+.news .tilePlus .time {
+  font-size: 2.5em;
+}
+
+.news .tilePlus p {
+  font-size: 1.2em;
+  line-height: 1.7em;
+}
+
+.about {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+}
+
+.about .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about h1 {
+  height: 1em;
+  margin: 0px;
+  width: 100vw;
+  font-family: 'Bebas Neue Cyrillic';
+  font-size: 2.5em;
+  text-align: center;
+  color: white;
+}
+
+.aboutCarousel {
+  height: 50vh;
+  -webkit-transform: var(--trnslate);
+          transform: var(--trnslate);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.5s cubic-bezier(0, 0, 0.58, 1);
+  transition: all 0.5s cubic-bezier(0, 0, 0.58, 1);
+}
+
+@media (min-width: 1501px) {
+  .aboutCarousel {
+    width: 175vw;
+  }
+}
+
+@media (min-width: 1241px) and (max-width: 1500px) {
+  .aboutCarousel {
+    width: 210vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1240px) {
+  .aboutCarousel {
+    width: 350vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .aboutCarousel {
+    width: 525vw;
+  }
+}
+
+.slide {
+  height: 50vh;
+  text-align: center;
+  border-radius: 2em;
+  margin: 0px 2em;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 1501px) {
+  .slide {
+    width: 25vw;
+  }
+}
+
+@media (min-width: 1241px) and (max-width: 1500px) {
+  .slide {
+    width: 30vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1240px) {
+  .slide {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .slide {
+    width: 75vw;
+  }
+}
+
+.slide h2 {
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  width: 25vw;
+  text-shadow: 0px 0px 5px rgba(34, 60, 80, 0.3);
+}
+
+@media (min-width: 1840px) {
+  .slide h2 {
+    font-size: 2.5em;
+  }
+}
+
+@media (min-width: 1381px) and (max-width: 1840px) {
+  .slide h2 {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1036px) and (max-width: 1380px) {
+  .slide h2 {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1035px) {
+  .slide h2 {
+    font-size: 2.5em;
+  }
+}
+
+.slide h2:first-child {
+  font-family: 'Crawley';
+  text-align: start;
+  -webkit-transform: translateX(0.5em);
+          transform: translateX(0.5em);
+}
+
+.slide h2:last-child {
+  font-family: 'Bebas Neue Cyrillic';
+  text-align: end;
+  -webkit-transform: translateX(-2em);
+          transform: translateX(-2em);
+}
+
+#slide1 {
+  background-image: url("images/team/zevara.jpg");
+}
+
+#slide2 {
+  background-image: url("images/team/aziz.jpg");
+}
+
+#slide3 {
+  background-image: url("images/team/laylo.JPG");
+}
+
+#slide4 {
+  background-image: url("images/team/nonna.JPG");
+}
+
+#slide5 {
+  background-image: url("images/team/nigina.JPG");
+  background-position: center;
+}
+
+#slide6 {
+  background-image: url("images/team/nonna.JPG");
+}
+
+#slide7 {
+  background-image: url("images/team/nigina.JPG");
+  background-position: center;
+}
+
+.purejscarousel-dot {
+  display: none;
+}
+
+.purejscarousel-btn {
+  display: none;
+}
+/*# sourceMappingURL=main.css.map */

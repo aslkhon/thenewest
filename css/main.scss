@@ -1,0 +1,410 @@
+@font-face {
+  font-family: 'Merriweather Light';
+  src: url('Merriweather-Light.eot');
+  src: url('Merriweather-Light.eot?#iefix') format('embedded-opentype'),
+  url('Merriweather-Light.woff') format('woff'),
+  url('Merriweather-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bebas Neue Regular';
+  src: url('BebasNeueRegular.eot');
+  src: url('BebasNeueRegular.eot?#iefix') format('embedded-opentype'),
+  url('BebasNeueRegular.woff') format('woff'),
+  url('BebasNeueRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Myriad Pro Regular';
+  src: url('MyriadPro-Regular.eot');
+  src: url('MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+  url('MyriadPro-Regular.woff') format('woff'),
+  url('MyriadPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --card1: translateX(0vw) scale(1);
+  --card2: translateX(40vw) scale(1.2);
+  --card3: translateX(80vw) scale(1);
+  --src1: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url('images/fishing.jpg');
+  --src2: linear-gradient(rgba(29, 38, 113, 0.3), rgba(195, 55, 100, 0.3)), url('images/girl.jpg');
+  --src3: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8)), url('images/rasp.jpg');
+  @media (min-width: 1501px) {
+    --trnslate: translateX(-37.5vw);
+  }
+  @media (min-width: 1241px) and (max-width: 1500px) {
+    --trnslate: translateX(-55vw);
+  }
+  @media (min-width: 768px) and (max-width: 1240px) {
+    --trnslate: translateX(-125vw);
+  }
+  @media (max-width: 767px) {
+    --trnslate: translateX(-212.5vw);
+  }
+}
+
+body {
+  margin: 0%;
+  background: rgb(255,170,0);
+  background: linear-gradient(135deg, #ffaa00 0%, #ff6600 100%);
+  overflow-x: hidden;
+}
+
+.search-panel {
+  z-index: 5;
+  background-color: white;
+  position: fixed;
+  top: 0vh;
+  left: 70vw;
+  width: 22vw;
+  padding-left: 2em;
+  border-radius: 0 0 1.5em 1.5em;
+  box-shadow: 0px 0px 25px 0px rgba(34, 60, 80, 0.2);
+
+  p {
+    margin: 0.5em;
+    font-size: 1.5em;
+    font-family: 'Bebas Neue Cyrillic';
+    color: #ff6600;
+  }
+}
+
+.panel {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  nav {
+    margin: auto;
+    width: 60vw;
+    display: flex;
+
+    h1 {
+      font-family: 'Crawley';
+      @media (min-width: 1921px) {
+        font-size: 5em;
+      }
+      @media (min-width: 1381px) and (max-width: 1920px) {
+        font-size: 4em;
+      }
+      @media (min-width: 1036px) and (max-width: 1380px) {
+        font-size: 3em;
+      }
+      @media (min-width: 768px) and (max-width: 1035px) {
+        font-size: 2.5em;
+      }
+      color: white;
+      font-weight: 100;
+      flex: 2;
+    }
+
+    .gap {
+      flex: 2;
+    }
+
+    .list {
+      flex: 4;
+      display: flex;
+      a {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Bebas Neue Cyrillic';
+        color: white;
+        @media (min-width: 1921px) {
+          font-size: 2.5em;
+        }
+        @media (min-width: 1381px) and (max-width: 1920px) {
+          font-size: 2em;
+        }
+        @media (min-width: 1036px) and (max-width: 1380px) {
+          font-size: 1.5em;
+        }
+        @media (min-width: 768px) and (max-width: 1035px) {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+
+  .carousel {
+    transform: translateX(-10vw);
+    width: 120vw;
+    display: flex;
+    .card {
+      cursor: pointer;
+      width: 30vw !important;
+      position: absolute;
+      margin: 4em;
+      padding: 2em;
+      box-shadow: 0px 0px 25px 0px rgba(34, 60, 80, 0.2);
+      height: 40vh;
+      border-radius: 2.5em;
+      transition: all 0.5s;
+
+      h2 {
+        font-size: 4em;
+        margin: 0%;
+        font-family: 'Bebas Neue Cyrillic';
+        color: white;
+        text-shadow: 0px 0px 5px rgba(34, 60, 80, 0.3);
+      }
+
+      h4 {
+        font-size: 1em;
+        font-weight: 200;
+        margin-top: 0.5em;
+        font-family: 'Myriad Pro';
+        color: white;
+        text-shadow: 0px 0px 5px rgba(34, 60, 80, 0.3);
+      }
+
+      .form {
+        display: flex;
+        bottom: 1em;
+        position: absolute;
+      }
+
+      p {
+        flex: 4;
+        font-size: 0.9em;
+        color: white;
+        font-family: 'Merriweather';
+        line-height: 1.7em;
+      }
+      
+      .btn {
+        flex: 1;
+        display: flex;
+        justify-content: end;
+        align-items: flex-end;
+      }
+
+      button {
+        font-family: 'Bebas Neue Cyrillic';
+        font-size: 1.5rem;
+        color: #ff6600;
+        height: 2em;
+        width: 4em;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+        border: none;
+        border-radius: 0.7em;
+        margin-bottom: 0.5em;
+        margin-right: 1em;
+      }
+    }
+
+    .card1 {
+      z-index: 1;
+      transform: var(--card1);
+      background: var(--src1);
+      background-size: cover;
+    }
+
+    .card2 {
+      z-index: 2;
+      transform: var(--card2);
+      background: var(--src2);
+      background-size: cover;
+    }
+
+    .card3 {
+      z-index: 3;
+      transform: var(--card3);
+      background: var(--src3);
+      background-size: cover;
+    }
+  }
+}
+
+.news {
+  overflow: scroll;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  background-color: white;
+  height: 100vh;
+
+  h1 {
+    margin-left: 0.8em;
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    font-family: 'Bebas Neue Cyrillic';
+    color: #ff6600;
+    font-size: 2.5em;
+  }
+
+  .tbl {
+    display: flex;
+    div {
+      flex: 1;
+    }
+    div {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+  }
+
+  .tile {
+    margin-bottom: 4em;
+    .time {
+      font-family: 'Bebas Neue Cyrillic';
+      font-size: 1.7em;
+      color: #797979;
+      margin: 0px;
+    }
+
+    p {
+      font-family: 'Merriweather';
+      line-height: 1.7em;
+    }
+    border-bottom: solid #979797 1px;
+  }
+
+  .tilePlus {
+    .time {
+      font-size: 2.5em;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.7em;
+    }
+  }
+} 
+
+.about {
+  height: 100vh;
+  display: grid;
+
+  .header {
+    display: flex;
+    align-items: center;
+  }
+
+  h1 {
+    height: 1em; 
+    margin: 0px;
+    width: 100vw;
+    font-family: 'Bebas Neue Cyrillic';
+    font-size: 2.5em;
+    text-align: center;
+    color: white;
+  }
+}
+
+.aboutCarousel {
+  height: 50vh;
+  transform: var(--trnslate);
+  display: flex;
+  transition: all 0.5s cubic-bezier(0, 0, .58, 1);
+  @media (min-width: 1501px) {
+    width: 175vw;
+  }
+  @media (min-width: 1241px) and (max-width: 1500px) {
+    width: 210vw;
+  }
+  @media (min-width: 768px) and (max-width: 1240px) {
+    width: 350vw;
+  }
+  @media (max-width: 767px) {
+    width: 525vw;
+  }
+}
+
+.slide {
+  height: 50vh;
+  text-align: center;   
+  border-radius: 2em;
+  margin: 0px 2em;
+  background-size: cover;
+  background-position: center;
+  @media (min-width: 1501px) {
+    width: 25vw;
+  }
+  @media (min-width: 1241px) and (max-width: 1500px) {
+    width: 30vw;
+  }
+  @media (min-width: 768px) and (max-width: 1240px) {
+    width: 50vw;
+  }
+  @media (max-width: 767px) {
+    width: 75vw;
+  }
+  h2 {
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    width: 25vw;
+    text-shadow: 0px 0px 5px rgba(34, 60, 80, 0.3);
+    @media (min-width: 1840px) {
+      font-size: 2.5em;
+    }
+    @media (min-width: 1381px) and (max-width: 1840px) {
+      font-size: 2em;
+    }
+    @media (min-width: 1036px) and (max-width: 1380px) {
+      font-size: 3em;
+    }
+    @media (min-width: 768px) and (max-width: 1035px) {
+      font-size: 2.5em;
+    }
+  }
+
+  h2:first-child {
+    font-family: 'Crawley';
+    text-align: start;
+    transform: translateX(0.5em);
+  }
+
+  h2:last-child {
+    font-family: 'Bebas Neue Cyrillic';
+    text-align: end;
+    transform: translateX(-2em);
+  }
+}
+
+#slide1 {
+  background-image: url('images/team/zevara.jpg');
+}
+
+#slide2 {
+  background-image: url('images/team/aziz.jpg');
+}
+
+#slide3 {
+  background-image: url('images/team/laylo.JPG');
+}
+
+#slide4 {
+  background-image: url('images/team/nonna.JPG');
+}
+
+#slide5 {
+  background-image: url('images/team/nigina.JPG');
+  background-position: center;
+}
+
+#slide6 {
+  background-image: url('images/team/nonna.JPG');
+}
+
+#slide7 {
+  background-image: url('images/team/nigina.JPG');
+  background-position: center;
+}
+
+.purejscarousel-dot {
+  display: none;
+}
+
+.purejscarousel-btn {
+  display: none;
+}
